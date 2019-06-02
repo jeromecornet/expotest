@@ -7,12 +7,28 @@
     "eject": "expo eject"
   },
   "dependencies": {
+    "detox": "^12.10.2",
+    "detox-expo-helpers": "^0.6.0",
     "expo": "^32.0.0",
+    "expo-detox-hook": "^1.0.10",
+    "jest": "^24.8.0",
+    "jest-expo": "^32.0.1",
     "react": "16.5.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-32.0.0.tar.gz"
   },
   "devDependencies": {
     "babel-preset-expo": "^5.0.0"
   },
-  "private": true
+  "private": true,
+  "detox": {
+    "test-runner": "jest",
+    "specs": "e2e",
+    "configurations": {
+      "ios": {
+        "binaryPath": "bin/expo.app",
+        "type": "ios.simulator",
+        "name": "iPhone 8"
+      }
+    }
+  }
 }
